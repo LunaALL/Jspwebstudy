@@ -38,4 +38,10 @@
   
   </servlet-mapping>
   
+  <context-param>
+  <param-name>contextConfig</param-name>
+  <param-value>/WEB-INF-/context.xml</param-value>
+  
+  </context-param>
+  
 </web-app>
