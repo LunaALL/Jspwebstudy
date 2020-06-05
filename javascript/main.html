@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #red{
+            color:red; border:1; font-size:20px;
+        }
+
+    </style>
+    <title>테스트 화면입니다.</title>
+    
+
+    <p id='red'>
+        레드속성 입력
+    </p>
+
+
+</head>
+<body>
+
+    <script>
+        var t="<table border=1>";
+
+        for(var j=0 ; j<5;j++){
+            t+="<tr>";
+            for(var i=0 ; i<10 ; i++){
+            t+="<td id='red'>"+i+"</td>";
+        }
+
+        t+="</tr>";
+
+        }
+
+    
+        t+="</tr></table>";
+        document.write(t);
+
+
+        var arr = ['다르게',"다른문자열",1,"어이구","타입차이가 없다"];
+        for(var a in arr){
+            document.write(arr[a]+"<br>");
+        }
+    </script>
+    
+</body>
+</html>
