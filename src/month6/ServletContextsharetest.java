@@ -20,13 +20,13 @@ public class ServletContextsharetest extends HttpServlet {
 		ServletContext co =this.getServletContext();
 		
 		Shareinfo info1 = new Shareinfo();
-		info1.setinfo(20, "김창용");
-		co.setAttribute("창용", info1);
+		info1.setinfo(20, "김ss");
+		co.setAttribute("sss", info1);
 		
 		
 		Shareinfo info2 = new Shareinfo();
-		info1.setinfo(26, "김우용");
-		co.setAttribute("우용", info1);
+		info1.setinfo(26, "dd");
+		co.setAttribute("aa", info1);
 		
 		out.print("각 객체에 대해 등록절차를 마쳤습니다.");
 		out.close();
