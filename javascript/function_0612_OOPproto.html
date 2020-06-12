@@ -1,0 +1,55 @@
+<script>
+    function Checkweight(name, height,  weight)
+    {
+        this.username=name;
+        this.userheight=height;
+        this.userweight=weight;
+        this.maxweight;
+        this.minweight;
+
+
+        Checkweight.prototype.getinfo = function()
+    {
+        var str=""
+        str+="이름 :"+this.username+",";
+        str+="키 :"+this.userheight+",";
+        str+="몸무게 :"+this.userweight+"<br>";
+        return str;
+        
+    }
+    //프로토 타입을 사용하여 객체생성시 메모리 부하를 줄인다. 
+
+    Checkweight.prototype.getResult=function(){
+        this.minweight = (this.userheight - 100) * 0.9 -5;
+        this.maxweight = (this.userheight -  100) * 0.9 +5;
+        
+        if(this.userweight >= this.minweight && this.userweight<=this.maxweight){
+            return "정상 몸무게 입니다.";
+        }else if(this.userweight < this.minweight){
+            return "정상 몸무게보다 미달입니다.";
+        }else{
+            return "정상 몸무게보다 초과입니다.";
+        }
+    }
+
+    }
+
+    var kim = new Checkweight("김홀로",181,76);
+    var chang = new Checkweight("김욜로",180,82);
+
+    
+    console.log(kim);
+    console.log(chang);
+    
+
+    document.write(kim.getinfo() );
+    document.write(kim.getResult()+"<BR>");
+
+    document.write(chang.getinfo() );
+    document.write(chang.getResult());
+
+
+    
+  
+
+</script>
