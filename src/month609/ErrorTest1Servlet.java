@@ -20,6 +20,7 @@ public class ErrorTest1Servlet extends HttpServlet {
 		String getQuery=req.getQueryString();
 		out.print("겟방식에 쿼리문자열 출력 :"+ getQuery);
 		out.print("이 쿼리의 길이는 ? length"+ getQuery.length());
+		
 		out.close();
 		
 	
