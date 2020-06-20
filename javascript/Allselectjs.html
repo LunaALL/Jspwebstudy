@@ -8,10 +8,13 @@
     <script src="js/jquery.js"></script>
     <script>
     $(function(){
-        $("*").css("border","1px solid blue");
+        $("*").css("border","1px solid blue"), //전부선택
+        $(".impo").css("color","red"), //클래스 id 선택
+        $("h1").css("color","gray"), //태그 선택.
+        $("h3,.tit").css("background-color","#0ff").css("border","2px dashed #f00");
     });
 
-  </script>
+  </script> 
 </head>
 <body>
     <h1>제이 쿼리입니다.</h1>
@@ -21,8 +24,13 @@
 
     <h2>소제목입니다. </h2>
 
-    <h3>주장입니다. </h3>
+    <h3>주장입니다. 이 부분에는 그룹요소명으로 배경을 지정합니다.</h3>
+    
+    <p class="tit">강조하지 않는 내용을 이렇게 지정한다. </p>
 
+    <p class="impo">강조하는 내용은 이런식으로 표현합니다 </p>
+
+    
     
 
 
