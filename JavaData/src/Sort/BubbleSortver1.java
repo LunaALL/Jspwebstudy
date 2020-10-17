@@ -10,14 +10,24 @@ public class BubbleSortver1 {
     }
 
     static void bubblesort(int[] arr, int leng){
+        int change=0;
+        int count=0;
         for(int i=0; i<leng;i++){
+            if(passnum==leng){
+                System.out.println("연산 종료. 비교 횟수:"+count+"회 교환 횟수:"+change+"회");
+                break;
+            }
             System.out.println("패스"+passnum);
+
             for(int j = 1 ; j<leng-i ; j++){
                 if(arr[j-1] > arr[j]){
                     print(arr, j-1,j);
                     swap(arr,j-1,j);
+                    count++;
+                    change++;
                     continue;
                 }
+                count++;
                 print2(arr,j-1,j);
             }
             passnum++;
@@ -56,7 +66,7 @@ public class BubbleSortver1 {
 
 
     public static void main(String[] args) {
-        int[] arr1={6,4,3,7,1,9,8};
+        int[] arr1={8,4,5,21,1,5,2,11,21,6,9,7,2,8,14};
         bubblesort(arr1,arr1.length);
 
     }
