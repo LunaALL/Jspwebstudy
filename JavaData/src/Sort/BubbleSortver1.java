@@ -17,7 +17,7 @@ public class BubbleSortver1 {
                 System.out.println("연산 종료. 비교 횟수:"+count+"회 교환 횟수:"+change+"회");
                 break;
             }
-            System.out.println("패스"+passnum);
+            System.out.println("패스"+passnum+" 고정갯수:"+( passnum-1) );
 
             for(int j = 1 ; j<leng-i ; j++){
                 if(arr[j-1] > arr[j]){
