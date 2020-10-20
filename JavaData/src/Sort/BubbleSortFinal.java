@@ -7,7 +7,7 @@ public class BubbleSortFinal {
     static void bubble(int [] arr, int last){
         if(last>0){
             for(int i=1; i<last;i++){
-                if(arr[i-1]>arr[i]){
+                if(arr[i-1]<arr[i]){
                     swap(arr,i-1,i);
                 }
             }

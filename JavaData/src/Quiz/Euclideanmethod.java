@@ -7,7 +7,6 @@ public class Euclideanmethod {
     static int gcd(int x, int y){
         //재귀를 진행하며, x%y가 0일 경우 x를 그대로 반환한다. (인자는 y가 들어오게됨)
         if(y==0) {
-
             return x;
         }else{
             System.out.println("x="+x+" y= "+y +" x%y= "+(x%y));

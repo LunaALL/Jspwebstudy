@@ -4,6 +4,10 @@ import java.util.Scanner;
 
 public class SentinalSearch {
 
+    public class dongexception extends RuntimeException{
+
+    }
+
     static int 보초검색(int[] arr, int leng, int key){
         arr[leng]=key;
 
@@ -33,6 +37,8 @@ public class SentinalSearch {
 
         int idx= 보초검색(arr, arrlen, search);
         System.out.println("값을 찾은 위치는 (음수일 때 false) "+ idx);
+
+
 
 
 
