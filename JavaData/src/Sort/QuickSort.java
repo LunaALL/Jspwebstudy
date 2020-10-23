@@ -14,9 +14,15 @@ public class QuickSort {
     }
 
     static void quicksort(int[] arr, int left, int right){
-        int pleft= left;
-        int pright= right;
-        int pivot= arr[(pleft+pright)/2];
+        int pleft= left;  //왼쪽 커서
+        int pright= right;   //오른쪽 커서
+        int pivot= arr[(pleft+pright)/2]; //피벗
+
+        System.out.printf("arr[%d]~arr[%d] : {", left, right);
+        for( int i=left; i<right;i++){
+            System.out.printf("%d , ", arr[i]);
+        }
+        System.out.printf("%d}\n" , arr[right]);
 
         do {
             while (arr[pleft]<pivot) pleft++;
@@ -29,18 +35,12 @@ public class QuickSort {
     }
 
     public static void main(String[] args) {
-
         long First = System.currentTimeMillis();
         int[] arr={7,5,9,3,6,4,2,10,8,5,6,16,32,25,16,13,22,65,32,68,43,54,32,2,1,3,5,21,6,82,32,54,46,2,3,5532,31241};
         quicksort(arr, 0 ,arr.length-1 );
-        int sum=0;
-        for (int i=0 ; i<1000000000;i++){
-            sum=sum+i;
-        }
-        System.out.println(sum);
-
         long After= System.currentTimeMillis();
-        long Timecount= (After-First)/1000;
+        System.out.println(After);
+        long Timecount = (After-First)/1000;
 
         System.out.println(Timecount);
 
