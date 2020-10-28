@@ -48,14 +48,13 @@ public class notReculQuicksort {
 
     public static void main(String[] args) {
 
-        int[] arr ={6,5,9,4,2,10,16,22,1};
+        int[] arr = {6, 5, 9, 4, 2, 10, 16, 22, 1};
 
-        QuickSort(arr,0,arr.length-1);
+        QuickSort(arr, 0, arr.length - 1);
 
-        for (int x: arr
-             ) {
-            System.out.print(x+",");
-
+        for (int x : arr
+        ) {
+            System.out.print(x + ",");
         }
 
     }
