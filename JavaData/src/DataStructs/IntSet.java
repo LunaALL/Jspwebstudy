@@ -22,8 +22,33 @@ public class IntSet {
         return max;
     }
 
-    public int size() {
+    public int isSize() {
         return num;
     }
+
+    public int indexOf(int key){
+        for(int i=0; i<max ; i++){
+            if(set[i]==key){
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    //집합에 n이 있는지??
+    public boolean isCollect(int n){
+        return (indexOf(n) !=-1) ? true : false;
+    }
+
+    //집합에 a 추가
+    public boolean add(int n){
+        if(num>=max || isCollect(n) == true){
+            return false;
+        }else {
+            set[num++]=n;
+            return true;
+        }
+    }
+
 
 }
