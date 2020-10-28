@@ -50,5 +50,16 @@ public class IntSet {
         }
     }
 
+    public boolean remove(int n){
+        int idx;
+        if(num <= 0 || ( idx=indexOf(n) ) == -1)
+        {
+            return false;
+        } else{
+            set[idx] = set[--num];
+            return true;
+        }
+    }
+
 
 }
