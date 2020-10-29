@@ -3,7 +3,7 @@ package DataStructs;
 
 public class IntSet {
     private int max;
-    private int num;
+    private int num; // 넣은 갯수 .
     private int[] set;
 
     public void Intset(int capacity){
@@ -61,5 +61,41 @@ public class IntSet {
         }
     }
 
+    //자신의 집합을 매개변수로 들어온 s에 복사함.
+    public void copyTo(IntSet s){
+        int n= (s.max < num) ? s.max : num; //
+        for(int i=0; i<n; i++){
+            s.set[i] = set[i];
+        }
+        s.num=n;
+    }
+
+    //매개로 들어온 s 의 집합을 인스턴스 변수에 넣음.
+    public void copyFrom(IntSet s){
+        int n= (max<s.num) ? max : s.num;
+        for(int i=0; i<n; i++){
+            set[i]=s.set[i];
+        }
+        num=n;
+
+    }
+
+    public boolean equalTo(IntSet s){
+        if(num !=s.num)
+            return false;
+
+        for(int i= 0; i< num; i++){
+            int j=0;
+            for( ; j< s.num ; j++){
+                if(set[i] == s.set[j])
+                    break;
+
+            }
+
+            if(j==s.num)
+                return false;
+        }
+     return true;
+    }
 
 }
