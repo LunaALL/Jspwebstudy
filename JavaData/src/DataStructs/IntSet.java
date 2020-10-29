@@ -98,4 +98,22 @@ public class IntSet {
      return true;
     }
 
+    public void unionOf(IntSet s1, IntSet s2){
+        copyFrom(s1);
+        for(int i=0; i<s2.num; i++){
+            add(s2.set[i]);
+        }
+
+    }
+
+    public String toString() {
+        StringBuffer bf = new StringBuffer("{");
+        for(int i=0; i< num; i++){
+            bf.append(set[i]+ "");
+        }
+        bf.append("}");
+        return bf.toString();
+    }
+
+
 }
