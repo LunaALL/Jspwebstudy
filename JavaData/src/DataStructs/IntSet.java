@@ -109,7 +109,7 @@ public class IntSet {
     public String toString() {
         StringBuffer bf = new StringBuffer("{");
         for(int i=0; i< num; i++){
-            bf.append(set[i]+ "");
+            bf.append(set[i]+ ",");
         }
         bf.append("}");
         return bf.toString();
