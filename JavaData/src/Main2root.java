@@ -3,13 +3,21 @@ import DataStructs.IntSet;
 public class Main2root {
 
     public static void main(String[] args) {
-        IntSet too1 = new IntSet();
-        too1.Intset(10);
-        too1.add(10);
-        too1.add(20);
-        too1.add(30);
-        too1.add(40);
+        IntSet s1 = new IntSet(10);
+        IntSet s2 = new IntSet(10);
+        IntSet s3 = new IntSet(10);
 
-        System.out.println(too1.toString());
+        s1.add(10);
+        s1.add(15);
+        s1.add(20);
+        s1.add(25);
+
+        s1.copyTo(s2);
+        s2.add(12);
+        s2.remove(25);
+
+        System.out.println(s2.toString());
+        System.out.println(s1.toString());
+
     }
 }

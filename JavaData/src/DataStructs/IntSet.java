@@ -6,7 +6,7 @@ public class IntSet {
     private int num; // 넣은 갯수 .
     private int[] set;
 
-    public void Intset(int capacity){
+    public IntSet(int capacity){
         num=0;
         max=capacity;
         try{
