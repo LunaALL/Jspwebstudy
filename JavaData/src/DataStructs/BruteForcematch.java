@@ -37,10 +37,19 @@ public class BruteForcematch {
             System.out.println("텍스트를 찾을수 없습니다.");
             }
         else{
+            //일치하는 문자 바로 앞까지의 길이를 구함
             int len=0;
             for(int i=0; i<idx; i++){
-                len += s1.substring()
+                System.out.println("sub스트링"+s1.substring(i,i+1).getBytes().length);
+                len += s1.substring(i, i+1).getBytes().length;
             }
+            len +=s2.length();
+            System.out.println((idx+1) + "번째 문자부터 일치");
+            System.out.println("원문 텍스트:" + s1);
+            System.out.printf(String.format("패턴:%%%ds\n", len), s2);
+
         }
+
+
     }
 }
