@@ -36,13 +36,13 @@ public class IntSet {
     }
 
     //집합에 n이 있는지??
-    public boolean isCollect(int n){
+    public boolean contains(int n){
         return (indexOf(n) !=-1) ? true : false;
     }
 
     //집합에 a 추가
     public boolean add(int n){
-        if(num>=max || isCollect(n) == true){
+        if(num>=max || contains(n) == true){
             return false;
         }else {
             set[num++]=n;
@@ -72,7 +72,7 @@ public class IntSet {
 
     //매개로 들어온 s 의 집합을 인스턴스 변수에 넣음.
     public void copyFrom(IntSet s){
-        int n= (max<s.num) ? max : s.num;
+        int n = (max<s.num) ? max : s.num;
         for(int i=0; i<n; i++){
             set[i]=s.set[i];
         }
@@ -114,6 +114,20 @@ public class IntSet {
         bf.append("}");
         return bf.toString();
     }
+
+    public boolean isEmpty(){
+        return (num==0)? true : false;
+    }
+
+    public boolean isFull() {
+        return (num==max-1)? true : false;
+    }
+
+    public void clear(){
+       num=0;
+    }
+
+
 
 
 }
