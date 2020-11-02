@@ -4,20 +4,38 @@ import java.util.Scanner;
 
 public class BruteForcematch {
 
+
+
     static int bfMatch(String txt, String pat){
         int pt=0; //txt커서
         int pp=0; //찾는 문자열용 커서
 
         while(pt !=txt.length() && pp!= pat.length()){
+            System.out.println(pp + txt);
             if(txt.charAt(pt)==pat.charAt(pp)){
+                if(pt>0){
+                    for(int j=0; j<pt;j++){
+                        System.out.printf(" ");
+                    }
+                }
+                System.out.println("+");
+
                 pt++;
                 pp++;
                 //찾아보고 아니면 커서를 옮겨 매치만큼 또 검사~
             } else{
+                if(pt>0){
+                    for(int j=0; j<pt;j++){
+                        System.out.printf(" ");
+                    }
+                }
+                System.out.println("|");
                 pt = pt-pp+1;
                 pp=0;
             }
         }
+
+
         if(pp == pat.length())
             return pt-pp;
         return -1;
