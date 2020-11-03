@@ -11,15 +11,23 @@ public class BruteForcematch {
         int pp=0; //찾는 문자열용 커서
 
         while(pt !=txt.length() && pp!= pat.length()){
-            System.out.println(pp + txt);
+
+            System.out.println(pt +" "+ txt);
+
             if(txt.charAt(pt)==pat.charAt(pp)){
                 if(pt>0){
-                    for(int j=0; j<pt;j++){
+                    for(int j=0; j<pt+2;j++){
                         System.out.printf(" ");
                     }
                 }
                 System.out.println("+");
+                if(pt>0) {
+                    for (int j = 0; j < pt; j++) {
+                        System.out.printf(" ");
+                    }
+                }
 
+                System.out.println(" "+pat);
                 pt++;
                 pp++;
                 //찾아보고 아니면 커서를 옮겨 매치만큼 또 검사~
@@ -29,11 +37,18 @@ public class BruteForcematch {
                         System.out.printf(" ");
                     }
                 }
-                System.out.println("|");
+                System.out.println("  |");
+                if(pt>0){
+                    for(int j=0; j<pt;j++){
+                        System.out.printf(" ");
+                    }
+                }
+                System.out.println("  "+pat);
                 pt = pt-pp+1;
                 pp=0;
             }
         }
+        System.out.println("연산횟수" + (pt+1) +"회");
 
 
         if(pp == pat.length())
