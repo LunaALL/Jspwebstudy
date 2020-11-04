@@ -23,14 +23,18 @@ public class StringIndexofuse {
                 len1 += Plaintxt.substring(i,i+1).getBytes().length;
             }
             len1+=match.length();
+
             int len2=0;
             for(int i=0; i<idx2; i++){
                 len2 += Plaintxt.substring(i, i+1).getBytes().length;
             }
             len2 += match.length();
 
+            System.out.println("텍스트:"+Plaintxt);
+            System.out.printf(String.format("패턴 : %%%ds\n",len1) , match);
+            System.out.println("텍스트:"+Plaintxt);
+            System.out.printf(String.format("패턴 : %%%ds\n",len2) , match);
 
-            
 
 
         }
