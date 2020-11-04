@@ -13,7 +13,7 @@ public class StringIndexofuse {
         String match = sc.nextLine();
 
         int idx1= Plaintxt.indexOf(match);
-        int idx2= Plaintxt.indexOf(match);
+        int idx2= Plaintxt.lastIndexOf(match);  //끝자락 점검.
 
         if(idx1 == -1)
             System.out.println("텍스트 안에 패턴이 없습니다.");
