@@ -9,7 +9,7 @@ public class kmpsearch {
 
         //건너 뛰기 표
 
-
+        System.out.println(txt);
         skip[pt]=0;
         while(pt != pat.length()){
             if(pat.charAt(pt) == pat.charAt(pp)) {
@@ -23,6 +23,14 @@ public class kmpsearch {
             }
 
         }
+
+
+        System.out.println("건너뛰기표");
+        for (int x: skip
+             ) {
+            System.out.print(+x+"|");
+        }
+        System.out.println(" ");
 
         pt=pp=0;
         while(pt != txt.length() && pp != pat.length()){
@@ -42,11 +50,10 @@ public class kmpsearch {
     }
 
     public static void main(String[] args) {
-        String txt="ABCDEFABDEFBAQ";
-        String match="ABDEF";
+        String txt="ZABCABXACCADEF";
+        String match="ABCABD";
 
         int idx=kmpMatch(txt,match);
-
-        System.out.println(idx);
+        System.out.println( (idx<0 )? "찾지 못하였습니다.": idx+"칸에서 발견!!");
     }
 }
