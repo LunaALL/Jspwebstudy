@@ -48,6 +48,8 @@ public class bmMatch {
         int idx=bmMatch(txt,match);
         System.out.println(txt +"  |||| match = "+match);
         System.out.println( idx<0 ? "해당하는 패턴을 찾을 수 없습니다." : "원본 텍스트"+idx+"번째에서 찾았습니다");
+
+
     }
 
 }
