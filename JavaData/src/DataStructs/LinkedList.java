@@ -52,12 +52,13 @@ public class LinkedList <E> {
             ptr.next = crnt = new Node<E>(obj, null);
         }
     }
-    // 머리 노드 삭제
+    // 머리(헤드) 노드 삭제
     public void removeFirst() {
         if (head != null)							// 리스트가 비어 있지 않으면
             head = crnt = head.next;
     }
 
+    //꼬리 노드 삭제.
     public void removeLast() {
         if (head != null) {
             if (head.next == null)					// 노드가 하나만 있으면
@@ -66,10 +67,12 @@ public class LinkedList <E> {
                 Node<E> ptr = head;					// 스캔 중인  노드
                 Node<E> pre = head;					// 스캔 중인  노드의 앞쪽 노드
 
+                //리스트 끝까지 찾는 반복문
                 while (ptr.next != null) {
                     pre = ptr;
                     ptr = ptr.next;
                 }
+                
                 pre.next = null;					// pre는 삭제 후의 꼬리 노드
                 crnt = pre;
             }
