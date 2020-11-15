@@ -6,12 +6,15 @@ public class Queen8 {
     static boolean[] flag_b= new boolean[15];
     static boolean[] flag_c= new boolean[15];  //대각선 방향으로 퀸을 배치했는지 체크하는 flagb,c
     static int[] pos = new int[8]; //각 열의 퀸 위치
+    static int count=0;
 
     //각 열의 퀸의 위치를 출력.
     static void print() {
+        //i가 곧 열.
         for (int i=0; i<8;i++){
-            System.out.printf("%2d",pos[i]);
+            System.out.printf("%2d행",pos[i]);
         }
+        count++;
         System.out.println(" ");
     }
 
@@ -28,12 +31,16 @@ public class Queen8 {
                   set(i + 1);
                   flag_a[j] = flag_b[i+j] = flag_c[i-j+7]= false;
               }
+          
           }
       }
     }
 
     public static void main(String[] args) {
+        System.out.println(" 1열 2열 3열 4열 5열 6열 7열 8열");
         set(0); // 0열에 퀸 배치.
+        System.out.println("8퀸 문제 수행 답안 "+ count);
+
     }
 
 }
