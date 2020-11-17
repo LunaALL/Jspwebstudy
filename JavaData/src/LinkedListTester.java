@@ -36,12 +36,49 @@ public class LinkedListTester {
         public static final Comparator<Data> NO_ORDER = new NoOrderComparator();
 
         private static class NoOrderComparator implements Comparator <Data> {
-
             @Override
             public int compare(Data o1, Data o2) {
                 return (o1.no > o2.no) ? 1: (o1.no < o2.no) ? -1:0;
             }
         }
+
+        //메뉴 열거형형
+       enum Menu{
+            ADD_FIRST("머리에 노드를 삽입"),
+            ADD_LAST("꼬리에 노드를 삽입"),
+            RMV_FIRST("머리 노드를 삭제"),
+            RMV_LAST( "꼬리 노드를 삭제"),
+            RMV_CRNT("선택 노드를 삭제"),
+            CLEAR( "모든 노드를 삭제"),
+            SEARCH_NO(  "번호로 검색"),
+            SEARCH_NAME("이름으로 검색"),
+            NEXT( "선택 노드를 하나 뒤쪽으로 이동"),
+            PRINT_CRNT("선택 노드를 출력"),
+            DUMP( "모든 노드를 출력"),
+            TERMINATE( "종료");
+
+            private final String message;
+
+            static Menu MenuAt(int idx) {
+                for (Menu m : Menu.values()){
+                    if (m.ordinal() ==idx)
+                        return m;
+                }
+                return null;
+            }
+
+            //생성자
+            Menu(String string){
+                message = string;
+            }
+            //출력할 문자열을 반환.
+            String getMessage() {
+                return message;
+            }
+        }
+
+        //메뉴 선택
+        
     }
 
 
