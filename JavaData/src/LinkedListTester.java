@@ -77,8 +77,24 @@ public class LinkedListTester {
             }
         }
 
-        //메뉴 선택
-        
+        //메뉴
+        static Menu SelectMenu() {
+            int key;
+            do {
+                for (Menu m : Menu.values()) {
+                    System.out.printf("(%d) %s  ", m.ordinal(), m.getMessage());
+                    if ((m.ordinal() % 3) == 2 &&
+                            m.ordinal() != Menu.TERMINATE.ordinal())
+                        System.out.println();
+                }
+                System.out.print("：");
+                key = std.nextInt();
+            } while (key < Menu.ADD_FIRST.ordinal() ||
+                    key > Menu.TERMINATE.ordinal());
+            return Menu.MenuAt(key);
+        }
+
+
     }
 
 
