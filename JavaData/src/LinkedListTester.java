@@ -1,3 +1,6 @@
+import DataStructs.LinkedList;
+
+import java.sql.Array;
 import java.sql.SQLOutput;
 import java.util.Comparator;
 import java.util.Scanner;
@@ -39,6 +42,15 @@ public class LinkedListTester {
             @Override
             public int compare(Data o1, Data o2) {
                 return (o1.no > o2.no) ? 1: (o1.no < o2.no) ? -1:0;
+            }
+        }
+
+        // 이름으로 순서를 매기는 comparator
+        public static final Comparator<Data> NAME_ORDER = new NameOrderComparator();
+
+        private static class NameOrderComparator implements Comparator<Data> {
+            public int compare(Data d1, Data d2) {
+                return d1.name.compareTo(d2.name);
             }
         }
 
@@ -94,8 +106,84 @@ public class LinkedListTester {
             return Menu.MenuAt(key);
         }
 
+        public static void main(String[] args) {
+            Menu menu;						// 메뉴
+            Data data;						// 추가용 데이터 참조
+            Data ptr;						// 검색용 데이터 참조
+            Data temp = new Data();			// 입력용 데이터
+
+            LinkedList<Data> list = new LinkedList<Data>();		// 리스트를 생성
+
+            do {
+                switch (menu = SelectMenu()) {
+
+                    case ADD_FIRST :								// 머리에 노드를 삽입
+                        data = new Data();
+                        data.scanData("머리에 삽입", Data.N0 | Data.NAME);
+                        list.addFirst(data);
+                        break;
+
+                    case ADD_LAST :								// 꼬리에 노드를 삽입
+                        data = new Data();
+                        data.scanData("꼬리에 삽입", Data.N0 | Data.NAME);
+                        list.addLast(data);
+                        break;
+
+                    case RMV_FIRST :								// 머리 노드를 삭제
+                        list.removeFirst();
+                        break;
+
+                    case RMV_LAST :								// 꼬리 노드를 삭제
+                        list.removeLast();
+                        break;
+
+                    case RMV_CRNT :								// 선택 노드를 삭제
+                        list.removeCurrentNode();
+                        break;
+
+                    case SEARCH_NO :								// 회원번호로 검색
+                        temp.scanData("검색", Data.N0);
+                        ptr = list.search(temp, Data.NO_ORDER);
+                        if (ptr == null)
+                            System.out.println("그 번호의 데이터가 없습니다.");
+                        else
+                            System.out.println("검색 성공：" + ptr);
+                        break;
+
+                    case SEARCH_NAME :								// 이름으로 검색
+                        temp.scanData("검색", Data.NAME);
+                        ptr = list.search(temp, Data.NAME_ORDER);
+                        if (ptr == null)
+                            System.out.println("그 이름의 데이터가 없습니다.");
+                        else
+                            System.out.println("검색 성공：" + ptr);
+                        break;
+
+                    case NEXT :									// 선택 노드를 뒤쪽으로 이동
+                        list.next();
+                        break;
+
+                    case PRINT_CRNT :								// 선택 노드의 데이터를 출력
+                        list.printCurrentNode();
+                        break;
+
+                    case DUMP :									// 모든 노드를 리스트 순서로 출력
+                        list.dump();
+                        break;
+
+                    case CLEAR :									// 모든 노드를 삭제
+                        list.clear();
+                        break;
+                }
+            } while (menu != Menu.TERMINATE);
+
+
+        }
+
+        }
+
 
     }
 
 
-}
+
