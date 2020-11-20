@@ -94,7 +94,7 @@ public class LinkedListTester {
             int key;
             do {
                 for (Menu m : Menu.values()) {
-                    System.out.printf("(%d) %s  ", m.ordinal(), m.getMessage());
+                    System.out.printf("( %d ) %s  ", m.ordinal(), m.getMessage());
                     if ((m.ordinal() % 3) == 2 &&
                             m.ordinal() != Menu.TERMINATE.ordinal())
                         System.out.println();
