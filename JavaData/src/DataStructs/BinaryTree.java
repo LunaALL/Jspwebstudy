@@ -3,7 +3,7 @@ package DataStructs;
 import java.util.Comparator;
 
 //일반화 클래스. 타입 여러가지를 지정 가능.
-public class BinaryTree<k,v> {
+public class BinaryTree<K,V> {
     static class Node<K,V>{
         private K key;
         private V data;
@@ -40,7 +40,12 @@ public class BinaryTree<k,v> {
     public BinaryTree(Comparator<? super K> c) {
         this();
         comparator=c;
+    }
 
+    private int com(K key1, K key2) {
+        return (comparator == null) ? ((Comparable<K>) key1).compareTo(key2) : comparator.compare(key1,key2);
 
     }
-}
+
+    }
+
