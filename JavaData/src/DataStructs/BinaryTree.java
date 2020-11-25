@@ -42,9 +42,26 @@ public class BinaryTree<K,V> {
         comparator=c;
     }
 
-    private int com(K key1, K key2) {
+    private int comp(K key1, K key2) {
         return (comparator == null) ? ((Comparable<K>) key1).compareTo(key2) : comparator.compare(key1,key2);
 
+    }
+
+    public V search(K key){
+        Node<K,V> p =root;
+
+        while (true){
+            if(p==null){
+                return null;
+            }
+            int cond = comp(key, p.getKey());
+            if (cond == 0)
+                return p.getData(); //검색 성공
+            else if (cond<0)
+                p=p.left;
+            else
+                p=p.right;
+        }
     }
 
     }
