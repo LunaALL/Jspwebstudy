@@ -10,6 +10,10 @@ public class Main1Test {
         L1.printCurrentNode();
         L1.removeFirst();
         L1.printCurrentNode();
+        String a1= "이거 갖고 놀자 ";
+        StringBuilder sb =new StringBuilder(a1);
+         sb.reverse();
+        System.out.println(sb);
 
     }
 }
