@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9840156f-8449-48da-8424-25445ca37eda" name="Default Changelist" comment="" />
+    <list default="true" id="9840156f-8449-48da-8424-25445ca37eda" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/JavaData/src/basicStu/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaData/src/basicStu/Student.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,7 +22,9 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/JavaData" />
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -33,20 +37,17 @@
       <updated>1598605393306</updated>
       <workItem from="1598605396117" duration="29000" />
       <workItem from="1598605439170" duration="49000" />
+      <workItem from="1607326148854" duration="30000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="751" y="235" key="FileChooserDialogImpl" timestamp="1598605484359">
-      <screen x="0" y="0" width="2048" height="1112" />
+    <state x="1007" y="396" key="FileChooserDialogImpl" timestamp="1607326178201">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="751" y="235" key="FileChooserDialogImpl/0.0.2048.1112@0.0.2048.1112" timestamp="1598605484359" />
-    <state x="275" y="87" key="new project wizard" timestamp="1598605486378">
-      <screen x="0" y="0" width="2048" height="1112" />
-    </state>
-    <state x="275" y="87" key="new project wizard/0.0.2048.1112@0.0.2048.1112" timestamp="1598605486378" />
+    <state x="1007" y="396" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1607326178201" />
   </component>
 </project>
