@@ -44,7 +44,7 @@ public class BinaryTree<K, V> {
 
     private int comp(K key1, K key2) {
         return (comparator == null) ? ((Comparable<K>) key1).compareTo(key2) : comparator.compare(key1, key2);
-
+   //작을 땐 -1, 많으면 1 , 같으면 0
     }
 
     public V search(K key) {
