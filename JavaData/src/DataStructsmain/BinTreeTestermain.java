@@ -27,7 +27,9 @@ public class BinTreeTestermain {
 
         // 데이터를 입력합니다.
         void scanData(String guide, int sw) {
+            System.out.println(sw);
             System.out.println(guide + "할 데이터를 입력하세요.");
+            System.out.println(sw & NO);
 
             if ((sw & NO) == NO) {
                 System.out.print("번호：");
@@ -87,10 +89,10 @@ public class BinTreeTestermain {
         BinaryTree<Integer, Data> tree = new BinaryTree<Integer, Data>();
 
         do {
-            switch (menu = SelectMenu()) {
+            switch (menu = SelectMenu() ) {
                 case ADD :							// 노드를 삽입
                     data = new Data();
-                    data.scanData("삽입", Data.NO | Data.NAME);
+                    data.scanData("삽입", 3) ;
                     tree.add(data.keyCode(), data);
                     break;
 
