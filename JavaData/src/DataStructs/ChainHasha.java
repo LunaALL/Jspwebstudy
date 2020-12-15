@@ -47,28 +47,28 @@ public class ChainHasha <K,V> {
     }
 
     private V search(K key){
-        int hash = hashValue(key);
-        Node<K,V> p = table[hash];
+        int hash = hashValue(key);  //검색할 데이터의 해시 값
+        Node<K,V> p = table[hash]; // 선택 노드
 
         while (p != null){
             if (p.getKey().equals(key))
-                return p.getValue();
-            p=p.next;
+                return p.getValue();  //검색 성공
+            p=p.next;    //다음 노드를 가리키도록
         }
-        return null;
+        return null;   //검색 실패니까 null 반환함
     }
 
     public int add(K key, V data){
-       int hash = hashValue(key);
-       Node<K,V> p = table[hash];
+       int hash = hashValue(key);  //추가할 데이터의 해시 값
+       Node<K,V> p = table[hash];  //선택 노드
 
        while (p != null){
-           if (p.getKey().equals(key))
+           if (p.getKey().equals(key))   //이 키값은 이미 등록되었으니 리턴 1
                return 1;
-           p=p.next;
+           p=p.next;   // 다음 노드를 가리키도록
        }
        Node<K,V> temp = new Node<K,V>(key,data,table[hash]);
-       table[hash]=temp;
+       table[hash]=temp;   //해시 테이블안에 노드를 삽입함. temp 노드
        return 0;
     }
 
@@ -94,7 +94,7 @@ public class ChainHasha <K,V> {
     public void dump() {
         for (int i=0; i < size; i++){
             Node<K,V> p =table[i];
-            
+
         }
     }
 
