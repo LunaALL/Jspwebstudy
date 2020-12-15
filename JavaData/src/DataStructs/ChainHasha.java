@@ -42,6 +42,7 @@ public class ChainHasha <K,V> {
 
     // 해시값을 구함
     public int hashValue(Object key) {
+        System.out.println("hashcode what= " + key.hashCode() );
         return key.hashCode() % size;
     }
 
@@ -71,6 +72,31 @@ public class ChainHasha <K,V> {
        return 0;
     }
 
+    public int remove(K key){
+        int hash= hashValue(key);
+        Node<K,V> p = table[hash];
+        Node<K,V> pp = null;
+
+        while (p != null){
+            if(p.getKey().equals(key)){
+                if (pp == null)
+                    table[hash] = p.next;
+                else
+                    pp.next= p.next;
+                return 0;
+            }
+            pp=p;
+            p=p.next;
+        }
+        return 1;
+    }
+
+    public void dump() {
+        for (int i=0; i < size; i++){
+            Node<K,V> p =table[i];
+            
+        }
+    }
 
 
 
