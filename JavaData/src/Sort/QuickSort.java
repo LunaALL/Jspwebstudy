@@ -17,7 +17,6 @@ public class QuickSort {
         int pleft= left;  //왼쪽 커서
         int pright= right;   //오른쪽 커서
         int pivot= arr[(pleft+pright)/2]; //피벗
-
         System.out.printf("arr[%d]~arr[%d] : {", left, right);
         for( int i=left; i<right;i++){
             System.out.printf("%d , ", arr[i]);
