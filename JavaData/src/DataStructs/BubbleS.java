@@ -30,7 +30,4 @@ public class BubbleS {
         arr[x]=arr[y];
         arr[y]=temp;
     }
-
-
-
 }

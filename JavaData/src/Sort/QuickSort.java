@@ -14,24 +14,20 @@ public class QuickSort {
     }
 
     static void quicksort(int[] arr, int left, int right){
-        int pleft= left;  //왼쪽 커서
-        int pright= right;   //오른쪽 커서
-        int pivot= arr[(pleft+pright)/2]; //피벗
-        System.out.printf("arr[%d]~arr[%d] : {", left, right);
-        for( int i=left; i<right;i++){
-            System.out.printf("%d , ", arr[i]);
-        }
-        System.out.printf("%d}\n" , arr[right]);
-
-        do {
-            while (arr[pleft]<pivot) pleft++;
-            while (arr[pright]>pivot) pright--;
-            if(pleft<=pright)
-                swap(arr,pleft++,pright--);
-        }while (pleft<=pright);
-        if (left < pright) quicksort(arr,left,pright);
-        if (pleft < right) quicksort(arr,pleft, right);
+       int pleft=left;
+       int pright=right;
+       int pivot= arr[(pleft+pright)/2];
+       do{
+           while (arr[pleft]<pivot) pleft++;
+           while (arr[pright]>pivot) pright--;
+           if(pleft<=pright) {
+               swap(arr, pleft++, pright--);
+           }
+       }while(pleft<=pright);
+       if(left<pright) quicksort(arr, left, pright);
+       if(pleft<right) quicksort(arr, pleft, right);
     }
+
 
     public static void main(String[] args) {
         long First = System.currentTimeMillis();
